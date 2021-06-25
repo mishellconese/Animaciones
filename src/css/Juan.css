@@ -102,6 +102,100 @@ animation-duration: 3s;
 
 
 
+.Menu{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+.Menu ul{
+    display: flex;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Menu ul li{
+    background-color: #A9ECFF;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: auto;
+    padding: 10px 15px;
+    height: 90%;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: border 2s, background-color 2s, box-shadow 3s;
+}
+
+.Menu ul li:hover{
+    background-color: rgb 194, 194, 245;
+    border: 1px solid blue;
+    box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.41);
+
+}
+
+#Giros{
+    display: flex;
+    width: 100%;
+    height: min-content; 
+    justify-content: space-around;
+}
+
+.card2{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background-color: #A9ECFF;
+    margin: 20px;
+    transition: trasform 3s;
+}
+
+.card{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #A9ECFF;
+    margin: 20px;
+}
+
+.transiciones, .giros, .Menu{
+    display: grid;
+    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    grid-row-gap: 15px;
+}
+
+
+
+@media screen and (min-width: 421px) and (max-width: 800px){
+    .transiciones, .giros, .Menu{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 420px){
+    .transiciones, .giros, .Menu{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
 
 /* animacion */
 @keyframes slidein {
@@ -144,4 +238,171 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
+}
+
+@keyframes llegadaDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+
+    60%{
+        opacity: 0.8;
+        transform: translateX(-80px);
+    }
+
+    80%{
+        opacity: 0.9;
+        transform: translateX(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes llegadaIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+
+    60%{
+        opacity: 0.8;
+        transform: translateX(80px);
+    }
+
+    80%{
+        opacity: 0.9;
+        transform: translateX(-15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes llegadaArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+
+    60%{
+        opacity: 0.8;
+        transform: translateY(80px);
+    }
+
+    80%{
+        opacity: 0.9;
+        transform: translateY(-15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes llegadaAbajo{
+    0%{
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+
+    60%{
+        opacity: 0.8;
+        transform: translateY(-80px);
+    }
+
+    80%{
+        opacity: 0.9;
+        transform: translateY(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*giros*/
+
+.giro_completo{
+    transition: transform 3s;
+}
+
+.giro_completo:hover{
+    transform: rotate(360deg);
+}
+
+.giro_completo_rigth{
+    transition: transform 3s;
+
+}
+.giro_completo_rigth:hover{
+    transform: rotate(360deg);
+}
+
+.giro_completo_left{
+    transition: transform 3s;
+
+}
+.giro_completo_left:hover{
+    transform: rotate(-360deg);
+}
+
+.mediogiro_completo{
+    transition: transform 3s;
+
+}
+.mediogiro_completo:hover{
+    transform: rotate(180deg);
+}
+
+.mediogiro_rigth{
+    transition: transform 3s;
+
+}
+.mediogiro_rigth:hover{
+    transform: rotate(180deg);
+}
+
+.mediogiro_lefth{
+    transition: transform 3s;
+
+}
+.mediogiro_lefth:hover{
+    transform: rotate(-180deg);
+}
+
+.giro_infinito{
+    transition: transform 300s;
+
+}
+.giro_infinito:hover{
+    transform: rotate(36000deg);
+}
+
+/*transiciones*/
+
+.slideRight{
+    animation-name: llegadaDerecha;
+    animation-duration: 3s;
+}
+
+.slideLeft{
+    animation-name: llegadaIzquierda;
+    animation-duration: 3s;
+}
+
+.slideUp{
+    animation-name: llegadaArriba;
+    animation-duration: 3s;
+}
+
+.slideDown{
+    animation-name: llegadaAbajo;
+    animation-duration: 3s;
 }
